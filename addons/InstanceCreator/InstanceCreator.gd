@@ -20,7 +20,7 @@ func _enter_tree() -> void:
 	Dock.name = "Instance Creator"
 	
 	LocationTitle = Label.new()
-	LocationTitle.text = "Path Selector"
+	LocationTitle.text = "Path Selector:"
 	Dock.add_child(LocationTitle)
 	
 	LocationInput = LineEdit.new()
@@ -36,7 +36,7 @@ func _enter_tree() -> void:
 	Dock.add_child(Spacer)
 	
 	NameTitle = Label.new()
-	NameTitle.text = "Name Selector"
+	NameTitle.text = "Name Selector:"
 	Dock.add_child(NameTitle)
 	
 	NameInput = LineEdit.new()
