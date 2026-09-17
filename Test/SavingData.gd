@@ -5,12 +5,14 @@ extends Node
 var Score = 0
 
 func _ready() -> void:
-	Score = JavaScriptBridge.eval("window.localstorage.getItem('Score')")
-	if Score:
-		ScoreLabel.text = Score
+	var StoredScore = JavaScriptBridge.eval("window.localstorage.getItem('Score')")
+	if StoredScore:
+		ScoreLabel.text = StoredScore
+		Score = StoredScore
 
 func OnAddPressed() -> void:
 	Score += 1
+	ScoreLabel.text = str(Score)
 
 
 func OnSavePressed() -> void:
