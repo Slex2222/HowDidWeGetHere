@@ -5,7 +5,7 @@ extends Node
 var Score = 0
 
 func _ready() -> void:
-	var StoredScore = JavaScriptBridge.eval("window.localStorage.getItem('Score')")
+	var StoredScore = JavaScriptBridge.eval("localStorage.getItem('Score')")
 
 	if StoredScore != null:
 		Score = int(StoredScore)
