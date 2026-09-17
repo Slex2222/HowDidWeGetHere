@@ -18,4 +18,4 @@ func OnAddPressed() -> void:
 
 
 func OnSavePressed() -> void:
-	JavaScriptBridge.eval("window.localStorage.setItem('Score', '%s')" % Score)
+	JavaScriptBridge.eval("window.localStorage.setItem('Score', '" + str(Score) + "')")
