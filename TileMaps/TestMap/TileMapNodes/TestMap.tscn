@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cm8jcx2v646j6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d5g5h"]
+load_path = "res://.godot/imported/TestMap.png-50f0ef10c5d00c8d97623d5849ef6b2a.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3l36"]
+resource_name = "Testmap"
+texture = SubResource("CompressedTexture2D_d5g5h")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wgw2u"]
+sources/1 = SubResource("TileSetAtlasSource_m3l36")
+
+[node name="TestMap" type="TileMapLayer" unique_id=2023088147]
+tile_set = SubResource("TileSet_wgw2u")

@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="How did we get here"
-run/main_scene="uid://dqc4l61p5ldby"
+run/main_scene="uid://daamt4cuorxcy"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]
