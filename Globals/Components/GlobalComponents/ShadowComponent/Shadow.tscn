@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bhti126xi3pfl"]
+
+[ext_resource type="Shader" uid="uid://r125tji3m1qg" path="res://Globals/Components/GlobalComponents/ShadowComponent/Shadow.gdshader" id="1_7ag1u"]
+[ext_resource type="Texture2D" uid="uid://dec8d1n0mh7qo" path="res://Globals/Components/GlobalComponents/ShadowComponent/Shadow.png" id="2_o7oj0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o1530"]
+shader = ExtResource("1_7ag1u")
+shader_parameter/AlphaValue = 0.800000038
+
+[node name="Shadow" type="Sprite2D" unique_id=476908782]
+material = SubResource("ShaderMaterial_o1530")
+texture = ExtResource("2_o7oj0")

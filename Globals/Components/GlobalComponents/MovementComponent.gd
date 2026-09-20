@@ -8,7 +8,7 @@ extends Node2D
 @export var SelectedMoveableObject: CharacterBody2D
 
 func Movement(ObjectSpeed: float, Direction: Vector2) -> void:
-	SelectedMoveableObject.velocity = ObjectSpeed * Direction
+	SelectedMoveableObject.velocity = ObjectSpeed * Direction 
 
 func _process(_delta: float) -> void:
 	SelectedMoveableObject.move_and_slide()

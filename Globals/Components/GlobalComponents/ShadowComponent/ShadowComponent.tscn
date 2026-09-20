@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://otks2tdlxj3k"]
+
+[ext_resource type="Script" uid="uid://vr51qce6oowv" path="res://Globals/Components/GlobalComponents/ShadowComponent/ShadowComponent.gd" id="1_tlb3c"]
+
+[node name="ShadowComponent" type="Node2D" unique_id=1091627255]
+script = ExtResource("1_tlb3c")
