@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://daamt4cuorxcy"]
+
+[ext_resource type="PackedScene" uid="uid://cm8jcx2v646j6" path="res://TileMaps/TestMap/TileMapNodes/TestMap.tscn" id="1_g247f"]
+[ext_resource type="PackedScene" uid="uid://edwa7kc8u7m0" path="res://Instances/Player/Scenes/Player.tscn" id="2_5neot"]
+
+[node name="Main" type="Node2D" unique_id=2101397843]
+
+[node name="TestMap" parent="." unique_id=2023088147 instance=ExtResource("1_g247f")]
+tile_map_data = PackedByteArray(0, 0, 2, 0, 253, 255, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 254, 255, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 254, 255, 253, 255, 1, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Player" parent="." unique_id=897621269 instance=ExtResource("2_5neot")]
