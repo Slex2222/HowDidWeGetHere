@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cwtwq1085udqk" path="res://Globals/Components/GlobalComponents/InputComponent.gd" id="3_k3x16"]
 [ext_resource type="PackedScene" uid="uid://otks2tdlxj3k" path="res://Globals/Components/GlobalComponents/ShadowComponent/ShadowComponent.tscn" id="4_dvjiq"]
 [ext_resource type="PackedScene" uid="uid://bhti126xi3pfl" path="res://Globals/Components/GlobalComponents/ShadowComponent/Shadow.tscn" id="5_3dyp4"]
+[ext_resource type="Script" uid="uid://dad3kjhcclgnw" path="res://Globals/Components/GlobalComponents/QuitComponent.gd" id="6_3dyp4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk53w"]
 atlas = ExtResource("1_vk53w")
@@ -22,12 +23,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=897621269 node_paths=PackedStringArray("InputComponent", "VelocityComponent")]
+[node name="Player" type="CharacterBody2D" unique_id=897621269]
 script = ExtResource("1_o1530")
-InputComponent = NodePath("Components/InputComponent")
-VelocityComponent = NodePath("Components/VelocityComponent")
-
-[node name="PhysicsShape" type="CollisionShape2D" parent="." unique_id=374787075]
 
 [node name="Components" type="Node2D" parent="." unique_id=1464319595]
 
@@ -36,14 +33,22 @@ script = ExtResource("2_wggx7")
 Speed = 150.0
 SelectedMoveableObject = NodePath("../..")
 
-[node name="InputComponent" type="Node2D" parent="Components" unique_id=2111707842]
+[node name="InputComponent" type="Node2D" parent="Components" unique_id=2111707842 node_paths=PackedStringArray("VelocityComponent", "QuitComponent")]
 script = ExtResource("3_k3x16")
+VelocityComponent = NodePath("../VelocityComponent")
+QuitComponent = NodePath("../QuitComponent")
 
 [node name="ShadowComponent" parent="Components" unique_id=1091627255 instance=ExtResource("4_dvjiq")]
+visible = false
 
 [node name="Shadow" parent="Components/ShadowComponent" unique_id=476908782 instance=ExtResource("5_3dyp4")]
 position = Vector2(0, 13)
 scale = Vector2(0.359375, 0.21874997)
+
+[node name="QuitComponent" type="Node2D" parent="Components" unique_id=1657389563]
+script = ExtResource("6_3dyp4")
+
+[node name="PhysicsShape" type="CollisionShape2D" parent="." unique_id=374787075]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=631835477]
 
