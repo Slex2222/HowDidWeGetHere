@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://edwa7kc8u7m0"]
+[gd_scene format=3 uid="uid://edwa7kc8u7m0"]
 
 [ext_resource type="Script" uid="uid://di772lx0g4kco" path="res://Instances/Player/Scripts/Master Script/PlayerMaster.gd" id="1_o1530"]
 [ext_resource type="Texture2D" uid="uid://dar784fdruj84" path="res://Instances/Player/Assets/TestPlayer.png" id="1_vk53w"]
@@ -28,25 +28,24 @@ script = ExtResource("1_o1530")
 
 [node name="Components" type="Node2D" parent="." unique_id=1464319595]
 
-[node name="VelocityComponent" type="Node2D" parent="Components" unique_id=1055930296 node_paths=PackedStringArray("SelectedMoveableObject")]
+[node name="VelocityComponent" type="Node2D" parent="Components" unique_id=1055930296 node_paths=PackedStringArray("SelectedMoveableObject", "InputComponent")]
 script = ExtResource("2_wggx7")
 Speed = 150.0
 SelectedMoveableObject = NodePath("../..")
+InputComponent = NodePath("../InputComponent")
 
-[node name="InputComponent" type="Node2D" parent="Components" unique_id=2111707842 node_paths=PackedStringArray("VelocityComponent", "QuitComponent")]
+[node name="InputComponent" type="Node2D" parent="Components" unique_id=2111707842]
 script = ExtResource("3_k3x16")
-VelocityComponent = NodePath("../VelocityComponent")
-QuitComponent = NodePath("../QuitComponent")
 
 [node name="ShadowComponent" parent="Components" unique_id=1091627255 instance=ExtResource("4_dvjiq")]
-visible = false
 
 [node name="Shadow" parent="Components/ShadowComponent" unique_id=476908782 instance=ExtResource("5_3dyp4")]
 position = Vector2(0, 13)
 scale = Vector2(0.359375, 0.21874997)
 
-[node name="QuitComponent" type="Node2D" parent="Components" unique_id=1657389563]
+[node name="QuitComponent" type="Node2D" parent="Components" unique_id=1657389563 node_paths=PackedStringArray("InputComponent")]
 script = ExtResource("6_3dyp4")
+InputComponent = NodePath("../InputComponent")
 
 [node name="PhysicsShape" type="CollisionShape2D" parent="." unique_id=374787075]
 

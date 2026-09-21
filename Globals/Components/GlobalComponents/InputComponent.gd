@@ -1,10 +1,7 @@
 class_name InputComponent
 extends Node2D
 
-
-@export_category("Components Imports")
-@export var VelocityComponent: VelocityComponent
-@export var QuitComponent: QuitComponent
+signal FastQuitPressed
 
 var MovementDirection: Vector2
 var FastQuit: bool
@@ -20,11 +17,9 @@ func Velocity() -> void:
 		"MoveUp", 
 		"MoveDown"
 		)
-	
-	VelocityComponent.Movement(VelocityComponent.Speed, MovementDirection)
 
 func Quit() -> void:
 	FastQuit = Input.is_action_just_pressed("FastQuit")
 	if !FastQuit: return # return if fastquit is not pressed
 	
-	QuitComponent.QuitGame()
+	FastQuitPressed.emit()
