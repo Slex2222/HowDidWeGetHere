@@ -30,7 +30,7 @@ script = ExtResource("1_o1530")
 
 [node name="VelocityComponent" type="Node2D" parent="Components" unique_id=1055930296 node_paths=PackedStringArray("SelectedMoveableObject", "InputComponent")]
 script = ExtResource("2_wggx7")
-Speed = 150.0
+Speed = 100.0
 SelectedMoveableObject = NodePath("../..")
 InputComponent = NodePath("../InputComponent")
 
