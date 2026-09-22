@@ -28,6 +28,13 @@ window/size/window_height_override=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[editor]
+
+naming/default_signal_callback_name="{node_name}{signal_name}"
+naming/default_signal_callback_to_self_name="{signal_name}"
+naming/scene_name_casing=1
+naming/script_name_casing=1
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/InstanceCreator/plugin.cfg", "res://addons/_camera_setter/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
