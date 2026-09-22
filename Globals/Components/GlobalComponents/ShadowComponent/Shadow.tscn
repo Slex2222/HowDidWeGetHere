@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o1530"]
 shader = ExtResource("1_7ag1u")
-shader_parameter/AlphaValue = 0.800000038
+shader_parameter/AlphaValue = 0.6000000285
 
 [node name="Shadow" type="Sprite2D" unique_id=476908782]
 material = SubResource("ShaderMaterial_o1530")
