@@ -2,10 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://cm8jcx2v646j6" path="res://TileMaps/TestMap/TileMapNodes/TestMap.tscn" id="1_g247f"]
 [ext_resource type="PackedScene" uid="uid://edwa7kc8u7m0" path="res://Instances/Player/Scenes/Player.tscn" id="2_5neot"]
+[ext_resource type="PackedScene" uid="uid://b1m3eljxap47h" path="res://addons/_camera_setter/CameraNodes/OffsetNode.tscn" id="3_kvtte"]
+[ext_resource type="Script" uid="uid://fi6w72hbkcv2" path="res://addons/_camera_setter/CameraNodeScripts/OffsetNodeCollisionShape.gd" id="4_xv86u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvtte"]
+size = Vector2(64, 64)
 
 [node name="Main" type="Node2D" unique_id=2101397843]
 
 [node name="TestMap" parent="." unique_id=2023088147 instance=ExtResource("1_g247f")]
-tile_map_data = PackedByteArray(0, 0, 2, 0, 253, 255, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 254, 255, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 254, 255, 253, 255, 1, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="Player" parent="." unique_id=897621269 instance=ExtResource("2_5neot")]
+position = Vector2(-1, 0)
+
+[node name="OffsetNode" parent="." unique_id=15206368 instance=ExtResource("3_kvtte")]
+
+[node name="OffsetNodeCollisionShape" type="CollisionShape2D" parent="OffsetNode" unique_id=1002764847]
+position = Vector2(159, 0)
+shape = SubResource("RectangleShape2D_kvtte")
+script = ExtResource("4_xv86u")
+OffsetX = 100.0
+
+[editable path="Player"]
+[editable path="Player/CameraCenter"]

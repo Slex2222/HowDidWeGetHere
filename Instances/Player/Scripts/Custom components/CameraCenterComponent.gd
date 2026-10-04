@@ -1,0 +1,1 @@
+class_name CameraCenterComponent extends Area2D
