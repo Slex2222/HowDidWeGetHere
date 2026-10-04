@@ -2,7 +2,26 @@
 extends Control
 class_name CameraSetter
 
+var OffsetNode = preload("uid://b1m3eljxap47h")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func OffsetButtonPressed() -> void:
+	var SceneRoot = EditorInterface.get_edited_scene_root()
+	if !SceneRoot: return
+	
+	var OffsetNodes = SceneRoot.find_child("OffsetNodes", true, false)
+	if !OffsetNodes: return
+	
+	var OffsetNodeInstance = OffsetNode.instantiate()
+	OffsetNodes.add_child(OffsetNodeInstance)
+		
+	OffsetNodeInstance.global_position = FindScreenCenter()
+	OffsetNodeInstance.owner = SceneRoot
+
+
+func FindScreenCenter():
+	var Viewport2D = EditorInterface.get_editor_viewport_2d()
+	var Transforms = Viewport2D.global_canvas_transform
+	
+	var Center = Transforms.affine_inverse() * (Viewport2D.get_visible_rect().size / 2)
+	
+	return Center

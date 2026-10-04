@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ed1k1efupciw"]
 
+[ext_resource type="Script" uid="uid://5sjw41adukto" path="res://addons/_camera_setter/CameraSetter/CameraSetterPanel.gd" id="1_5o777"]
 [ext_resource type="StyleBox" uid="uid://cb708h1ujs4eg" path="res://addons/_camera_setter/CameraSetter/PanelBackground.tres" id="1_wk43c"]
 
 [node name="CameraSetter" type="Control" unique_id=1280513977]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5o777")
 
 [node name="Panel" type="Panel" parent="." unique_id=1671135728]
 layout_mode = 1
@@ -77,3 +79,5 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Border"
+
+[connection signal="pressed" from="Left Pannel/OffsetButton" to="." method="OffsetButtonPressed"]

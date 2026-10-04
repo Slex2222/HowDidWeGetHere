@@ -14,12 +14,13 @@ class_name OffsetNodeCollisionShape extends CollisionShape2D
 	set(Value):
 		OffsetY = Value
 		Offset.y = Value
-#endregion
 
 var Offset: Vector2 = Vector2.ZERO:
 	set(Value):
 		Offset = Value
 		queue_redraw()
+#endregion
+
 
 func _enter_tree() -> void:
 	name = "OffsetNodeCollisionShape"
