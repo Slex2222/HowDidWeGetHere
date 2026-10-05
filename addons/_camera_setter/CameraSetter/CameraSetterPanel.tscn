@@ -79,5 +79,3 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Border"
-
-[connection signal="pressed" from="Left Pannel/OffsetButton" to="." method="OffsetButtonPressed"]

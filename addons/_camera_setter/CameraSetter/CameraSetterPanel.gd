@@ -4,7 +4,15 @@ class_name CameraSetter
 
 var OffsetNode = preload("uid://b1m3eljxap47h")
 
+
+@onready var OffsetButton: Button = $"Left Pannel/OffsetButton"
+
+func _ready() -> void:
+	OffsetButton.pressed.connect(OffsetButtonPressed)
+
 func OffsetButtonPressed() -> void:
+	print("test")
+	
 	var SceneRoot = EditorInterface.get_edited_scene_root()
 	if !SceneRoot: return
 	
