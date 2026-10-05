@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wgw2u"]
 radius = 1.0
 
-[node name="CameraCenter" type="Area2D" unique_id=255813732]
+[node name="CameraCenter" type="Area2D" unique_id=298528225]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_xxy1a")

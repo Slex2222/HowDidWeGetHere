@@ -23,6 +23,8 @@ var Offset: Vector2 = Vector2.ZERO:
 
 
 func _enter_tree() -> void:
+	if !Engine.is_editor_hint(): return 
+
 	name = "OffsetNodeCollisionShape"
 	
 	var Rectangle := RectangleShape2D.new()
