@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://djk5cvn41eung"]
+
+[ext_resource type="Script" uid="uid://72w34dtlqs72" path="res://addons/_camera_setter/CameraNodeScripts/BorderNode.gd" id="1_8445h"]
+
+[node name="BorderNode" type="Area2D" unique_id=1311473874]
+script = ExtResource("1_8445h")

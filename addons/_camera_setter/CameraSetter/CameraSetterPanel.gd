@@ -6,13 +6,14 @@ var OffsetNode = preload("uid://b1m3eljxap47h")
 
 
 @onready var OffsetButton: Button = $"Left Pannel/OffsetButton"
+@onready var BorderButton: Button = $"Right Pannel/BorderButton"
+
 
 func _ready() -> void:
 	OffsetButton.pressed.connect(OffsetButtonPressed)
+	BorderButton.pressed.connect(BorderButtonPressed)
 
 func OffsetButtonPressed() -> void:
-	print("test")
-	
 	var SceneRoot = EditorInterface.get_edited_scene_root()
 	if !SceneRoot: return
 	
@@ -25,6 +26,8 @@ func OffsetButtonPressed() -> void:
 	OffsetNodeInstance.global_position = FindScreenCenter()
 	OffsetNodeInstance.owner = SceneRoot
 
+func BorderButtonPressed() -> void:
+	pass
 
 func FindScreenCenter():
 	var Viewport2D = EditorInterface.get_editor_viewport_2d()
