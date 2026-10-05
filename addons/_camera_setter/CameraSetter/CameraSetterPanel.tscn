@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Left Pannel" type="Panel" parent="." unique_id=892458497]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(120, 100)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
@@ -50,8 +50,39 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Offset"
 
+[node name="Middle Pannel" type="Panel" parent="." unique_id=1489737529]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_wk43c")
+
+[node name="CenterPointButton" type="Button" parent="Middle Pannel" unique_id=1596244714]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -15.5
+offset_right = 28.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Center Point"
+
 [node name="Right Pannel" type="Panel" parent="." unique_id=1247108185]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(120, 100)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8

@@ -6,8 +6,13 @@ var OffsetNode = preload("uid://b1m3eljxap47h")
 
 
 @onready var OffsetButton: Button = $"Left Pannel/OffsetButton"
+<<<<<<< Updated upstream
 @onready var BorderButton: Button = $"Right Pannel/BorderButton"
 
+=======
+@onready var CenterPointButton: Button = $"Middle Pannel/CenterPointButton"
+@onready var BorderButton: Button = $"Right Pannel/BorderButton"
+>>>>>>> Stashed changes
 
 func _ready() -> void:
 	OffsetButton.pressed.connect(OffsetButtonPressed)
