@@ -5,15 +5,30 @@ class_name BorderNodeCollisionShape extends CollisionShape2D
 @export var OneWay: bool = false:
 	set(value):
 		OneWay = value
-		one_way_collision = value
 		notify_property_list_changed()
 
 @export_group("One Way Direction", "OneWay_")
-@export var OneWay_Left := false
-@export var OneWay_Right := false
-@export var OneWay_Up := false
-@export var OneWay_Down := true
+enum Directions {
+	Left,
+	Right,
+	Up,
+	Down
+}
 
+@export var OneWay_Directions: Directions = Directions.Left:
+	set(value):
+		OneWay_Directions = value
+		
+		if value == Directions.Left:
+			OneWayDirectionVector = Vector2(-1, 0)
+		if value == Directions.Right:
+			OneWayDirectionVector = Vector2(1, 0)
+		if value == Directions.Up:
+			OneWayDirectionVector = Vector2(0, -1)
+		if value == Directions.Down:
+			OneWayDirectionVector = Vector2(0, 1)
+
+var OneWayDirectionVector: Vector2 = Vector2(-1, 0)
 #endregion
 
 func _validate_property(property: Dictionary) -> void:
@@ -30,12 +45,6 @@ func _enter_tree() -> void:
 	
 	if Engine.is_editor_hint():
 		call_deferred("SelectShape")
-
-#func _ready() -> void:
-	#get_parent().CameraCenterEnteredBorderNode.connect()
-#
-#func ApplyBorderRestrictions(Area: Area2D) -> void:
-	#pass
 
 func SelectShape() -> void:
 	EditorInterface.edit_node(self)

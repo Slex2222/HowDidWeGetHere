@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cm8jcx2v646j6" path="res://TileMaps/TestMap/TileMapNodes/TestMap.tscn" id="1_g247f"]
 [ext_resource type="PackedScene" uid="uid://edwa7kc8u7m0" path="res://Instances/Player/Scenes/Player.tscn" id="2_5neot"]
+[ext_resource type="PackedScene" uid="uid://djk5cvn41eung" path="res://addons/_camera_setter/CameraNodes/BorderNode.tscn" id="3_xv86u"]
+[ext_resource type="Script" uid="uid://ybcbjy3ut8r0" path="res://addons/_camera_setter/CameraNodeScripts/BorderNodeCollisionShape.gd" id="5_0qvcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvtte"]
+size = Vector2(64, 64)
 
 [node name="Main" type="Node2D" unique_id=2101397843]
 
@@ -11,8 +16,8 @@ tile_map_data = PackedByteArray("AAD+//7/AQAAAAAAAAD+////AQAAAAEAAAD+/wAAAQAAAAE
 [node name="Player" parent="." unique_id=897621269 instance=ExtResource("2_5neot")]
 position = Vector2(-1, 0)
 
-[node name="CameraCenter" parent="Player" index="3" unique_id=255813732]
-collision_mask = 8
+[node name="CollisionShape2D" parent="Player/CameraCenter" parent_id_path=PackedInt32Array(897621269, 255813732) index="0" unique_id=1234393217]
+one_way_collision_direction = Vector2(1, 0)
 
 [node name="CameraNodes" type="Node2D" parent="." unique_id=860840756]
 
@@ -21,6 +26,15 @@ unique_name_in_owner = true
 
 [node name="CenterPointNodes" type="Node2D" parent="CameraNodes" unique_id=304861987]
 unique_name_in_owner = true
+
+[node name="BorderNode" parent="CameraNodes/CenterPointNodes" unique_id=1000230564 instance=ExtResource("3_xv86u")]
+position = Vector2(-137.26709, -101.18526)
+
+[node name="BorderNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/CenterPointNodes/BorderNode" unique_id=1620936987]
+shape = SubResource("RectangleShape2D_kvtte")
+one_way_collision_direction = Vector2(1, 0)
+script = ExtResource("5_0qvcf")
+OneWay_Directions = 1
 
 [node name="BorderNodes" type="Node2D" parent="CameraNodes" unique_id=1515397751]
 unique_name_in_owner = true

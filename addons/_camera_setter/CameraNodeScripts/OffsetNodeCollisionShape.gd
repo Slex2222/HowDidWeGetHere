@@ -34,8 +34,8 @@ func _enter_tree() -> void:
 	if Engine.is_editor_hint():
 		call_deferred("SelectShape")
 
-func _ready() -> void:
-	get_parent().CameraCenterEnteredOffsetNode.connect(ApplyOffset)
+#func _ready() -> void:
+	#get_parent().CameraCenterEnteredOffsetNode.connect(ApplyOffset)
 
 func SelectShape() -> void:
 	EditorInterface.edit_node(self)
@@ -57,12 +57,3 @@ func _draw() -> void:
 		-1,                                     #width
 		16                                      #font size
 	)
-
-func ApplyOffset(CameraCenter: Area2D):
-	var CameraTween = create_tween()
-	CameraTween.set_ease(Tween.EASE_IN_OUT)
-	CameraTween.set_trans(Tween.TRANS_SINE)
-	
-	var Duration = CameraCenter.position.distance_to(Offset) / OffsetTransitionSpeed
-	
-	CameraTween.tween_property(CameraCenter, "position", Offset, Duration)
