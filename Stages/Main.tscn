@@ -2,18 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cm8jcx2v646j6" path="res://TileMaps/TestMap/TileMapNodes/TestMap.tscn" id="1_g247f"]
 [ext_resource type="PackedScene" uid="uid://edwa7kc8u7m0" path="res://Instances/Player/Scenes/Player.tscn" id="2_5neot"]
-[ext_resource type="PackedScene" uid="uid://b1m3eljxap47h" path="res://addons/_camera_setter/CameraNodes/OffsetNode.tscn" id="3_xv86u"]
-[ext_resource type="Script" uid="uid://cr528557o21vj" path="res://addons/_camera_setter/CameraNodeScripts/OffsetComponent.gd" id="4_w3q7g"]
-[ext_resource type="Script" uid="uid://fi6w72hbkcv2" path="res://addons/_camera_setter/CameraNodeScripts/OffsetNodeCollisionShape.gd" id="5_0qvcf"]
-[ext_resource type="PackedScene" uid="uid://djk5cvn41eung" path="res://addons/_camera_setter/CameraNodes/BorderNode.tscn" id="6_0qvcf"]
-[ext_resource type="Script" uid="uid://72w34dtlqs72" path="res://addons/_camera_setter/CameraNodeScripts/BorderNode.gd" id="7_p0207"]
-[ext_resource type="Script" uid="uid://ybcbjy3ut8r0" path="res://addons/_camera_setter/CameraNodeScripts/BorderNodeCollisionShape.gd" id="8_f7tol"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyy34"]
-size = Vector2(64, 204.93506)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv86u"]
-size = Vector2(64, 64)
 
 [node name="Main" type="Node2D" unique_id=2101397843]
 
@@ -31,31 +19,8 @@ collision_mask = 8
 [node name="OffsetNodes" type="Node2D" parent="CameraNodes" unique_id=1341108140]
 unique_name_in_owner = true
 
-[node name="OffsetNode" type="Area2D" parent="CameraNodes/OffsetNodes" unique_id=15206368 instance=ExtResource("3_xv86u")]
-position = Vector2(322.58502, -265.93506)
-collision_layer = 0
-collision_mask = 8
-script = ExtResource("4_w3q7g")
-
-[node name="OffsetNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/OffsetNodes/OffsetNode" unique_id=606139049]
-position = Vector2(0, 70.46753)
-shape = SubResource("RectangleShape2D_qyy34")
-script = ExtResource("5_0qvcf")
-OffsetTransitionSpeed = 55.0
-OffsetX = 48.0
-
 [node name="CenterPointNodes" type="Node2D" parent="CameraNodes" unique_id=304861987]
 unique_name_in_owner = true
-
-[node name="BorderNode" type="Area2D" parent="CameraNodes/CenterPointNodes" unique_id=1000230564 instance=ExtResource("6_0qvcf")]
-position = Vector2(314.49585, 81.0343)
-collision_layer = 8
-collision_mask = 8
-script = ExtResource("7_p0207")
-
-[node name="BorderNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/CenterPointNodes/BorderNode" unique_id=1083361961]
-shape = SubResource("RectangleShape2D_xv86u")
-script = ExtResource("8_f7tol")
 
 [node name="BorderNodes" type="Node2D" parent="CameraNodes" unique_id=1515397751]
 unique_name_in_owner = true

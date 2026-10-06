@@ -17,6 +17,7 @@ func _ready() -> void:
 	BorderButton.pressed.connect(BorderButtonPressed)
 	CenterPointButton.pressed.connect(CenterPointButtonPressed)
 
+#region ButtonPresses
 func OffsetButtonPressed() -> void:
 	CreateCustemCameraNode(OffsetNode, "OffsetNodes")
 
@@ -25,6 +26,7 @@ func BorderButtonPressed() -> void:
 
 func CenterPointButtonPressed() -> void:
 	CreateCustemCameraNode(CenterPointNode, "BorderNodes")
+#endregion
 
 func FindScreenCenter():
 	var Viewport2D = EditorInterface.get_editor_viewport_2d()
