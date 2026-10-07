@@ -1,8 +1,19 @@
 class_name CameraCenterComponent extends Area2D
 
+@onready var Player: CharacterBody2D = get_parent()
+
+var LastPos: Vector2
+var CurrentPos: Vector2
+
 func _ready() -> void:
 	area_entered.connect(CameraNodeEntered)
+	LastPos = global_position
+	CurrentPos = global_position
 
+func _physics_process(_delta: float) -> void:
+	LastPos = CurrentPos
+	CurrentPos = global_position
+	
 func CameraNodeEntered(Area: Area2D) -> void:
 	if Area is OffsetNode:
 		var CollisionShape = Area.get_child(0) 
@@ -12,7 +23,7 @@ func CameraNodeEntered(Area: Area2D) -> void:
 	if Area is BorderNode:
 		var CollisionShape = Area.get_child(0) 
 		if CollisionShape is BorderNodeCollisionShape:
-			if CollisionShape.OneWay and CollisionShape.OneWayDirectionVector != DetectEntranceSide(Area): return
+			if CollisionShape.OneWay and CollisionShape.OneWayDirectionVector != DetectEntranceSide(): return
 			
 			print("Worked")
 
@@ -25,8 +36,8 @@ func ApplyOffset(Offset: Vector2, OffsetTransitionSpeed: float):
 	
 	CameraTween.tween_property(self, "position", Offset, Duration)
 
-func DetectEntranceSide(Area: Area2D) -> Vector2:
-	var Direction = Area.global_position.direction_to(global_position)
+func DetectEntranceSide() -> Vector2:
+	var Direction = CurrentPos.direction_to(LastPos)
 	
 	if abs(Direction.x) > abs(Direction.y): # detect from which direction the player entered the Area 2d
 		if Direction.x < 0:

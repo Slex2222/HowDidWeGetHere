@@ -34,7 +34,8 @@ position = Vector2(-137.26709, -101.18526)
 shape = SubResource("RectangleShape2D_kvtte")
 one_way_collision_direction = Vector2(1, 0)
 script = ExtResource("5_0qvcf")
-OneWay_Directions = 1
+OneWay = true
+OneWay_Directions = 2
 
 [node name="BorderNodes" type="Node2D" parent="CameraNodes" unique_id=1515397751]
 unique_name_in_owner = true
