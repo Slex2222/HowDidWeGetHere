@@ -9,6 +9,13 @@ var BorderOffset: Vector2 = Vector2(0, 0)
 
 var CameraTween: Tween
 
+var PlayerInBorder: bool
+var PlayerMovement: Vector2
+var EntranceSide: Vector2 = Vector2.ZERO
+var OneWayDirectionVector: Vector2  = Vector2.ZERO
+var OneWay: bool = false
+
+
 func _ready() -> void:
 	area_entered.connect(CameraNodeEntered)
 	area_exited.connect(CameraNodeExited)
@@ -18,6 +25,8 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	TrackPlayer()
+	
+	TrackBorderForcedOffset(PlayerMovement, EntranceSide, OneWayDirectionVector, OneWay)
 
 func CameraNodeEntered(Area: Area2D) -> void:
 	if Area is OffsetNode:
@@ -36,7 +45,7 @@ func CameraNodeEntered(Area: Area2D) -> void:
 			if CollisionShape.OneWay: 
 				ApplyBorder(PlayerMovement, EntranceSide, CollisionShape.OneWayDirectionVector, true)
 			else: 
-				ApplyBorder(EntranceSide, EntranceSide)
+				ApplyBorder(PlayerMovement, EntranceSide)
 
 func CameraNodeExited(Area: Area2D) -> void:
 	if Area is BorderNode:
@@ -49,11 +58,26 @@ func CameraNodeExited(Area: Area2D) -> void:
 func CalcPlayerMovement() -> Vector2:
 	return CurrentPos - LastPos
 
-func ApplyBorder(PlayerMovement: Vector2, EntranceSide: Vector2 = Vector2.ZERO, OneWayDirectionVector: Vector2  = Vector2.ZERO, OneWay: bool = false) -> void:
+func ApplyBorder(PlayerMovementPara: Vector2, EntranceSidePara: Vector2 = Vector2.ZERO, OneWayDirectionVectorPara: Vector2  = Vector2.ZERO, OneWayPara: bool = false) -> void:
+	PlayerInBorder = true
+	PlayerMovement = PlayerMovementPara
+	EntranceSide = EntranceSidePara
+	OneWayDirectionVector = OneWayDirectionVectorPara
+	OneWay = OneWayPara
+
+func TrackBorderForcedOffset(PlayerMovement: Vector2, EntranceSide: Vector2 = Vector2.ZERO, OneWayDirectionVector: Vector2  = Vector2.ZERO, OneWay: bool = false) -> void:
+	if !PlayerInBorder: return
 	
-	print(EntranceSide)
-	print(OneWayDirectionVector)
-	print(PlayerMovement)
+	var Offset: Vector2 = Vector2.ZERO
+	if OneWay:
+		if OneWayDirectionVector.x * PlayerMovement.x > 0: Offset.x += -PlayerMovement.x 
+		if OneWayDirectionVector.y * PlayerMovement.y > 0: Offset.y += -PlayerMovement.y
+	
+	else:
+		if EntranceSide.x * PlayerMovement.x > 0: Offset.x += -PlayerMovement.x 
+		if EntranceSide.y * PlayerMovement.y > 0: Offset.y += -PlayerMovement.y 
+	
+	position += Offset
 
 func ApplyOffset(Offset: Vector2, OffsetTransitionSpeed: float) -> void:
 	CameraTween = create_tween()
