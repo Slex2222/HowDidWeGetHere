@@ -34,11 +34,14 @@ func _enter_tree() -> void:
 	if Engine.is_editor_hint():
 		call_deferred("SelectShape")
 
-#func _ready() -> void:
-	#get_parent().CameraCenterEnteredOffsetNode.connect(ApplyOffset)
-
 func SelectShape() -> void:
 	EditorInterface.edit_node(self)
+
+func _ready() -> void:
+	get_parent().body_entered.connect(ApplyOffset)
+
+func ApplyOffset() -> void:
+	pass
 
 func _draw() -> void:
 	if not Engine.is_editor_hint():

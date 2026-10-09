@@ -3,17 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cm8jcx2v646j6" path="res://TileMaps/TestMap/TileMapNodes/TestMap.tscn" id="1_g247f"]
 [ext_resource type="PackedScene" uid="uid://edwa7kc8u7m0" path="res://Instances/Player/Scenes/Player.tscn" id="2_5neot"]
 [ext_resource type="PackedScene" uid="uid://b1m3eljxap47h" path="res://addons/_camera_setter/CameraNodes/OffsetNode.tscn" id="3_p0207"]
-[ext_resource type="PackedScene" uid="uid://djk5cvn41eung" path="res://addons/_camera_setter/CameraNodes/BorderNode.tscn" id="3_xv86u"]
 [ext_resource type="Script" uid="uid://cr528557o21vj" path="res://addons/_camera_setter/CameraNodeScripts/OffsetComponent.gd" id="4_f7tol"]
-[ext_resource type="Script" uid="uid://ybcbjy3ut8r0" path="res://addons/_camera_setter/CameraNodeScripts/BorderNodeCollisionShape.gd" id="5_0qvcf"]
 [ext_resource type="Script" uid="uid://fi6w72hbkcv2" path="res://addons/_camera_setter/CameraNodeScripts/OffsetNodeCollisionShape.gd" id="5_qyy34"]
-[ext_resource type="Script" uid="uid://72w34dtlqs72" path="res://addons/_camera_setter/CameraNodeScripts/BorderNode.gd" id="7_vgnd4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0207"]
-size = Vector2(317, 497)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7tol"]
-size = Vector2(300, 642)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv86u"]
+size = Vector2(552, 271.2932)
 
 [node name="Main" type="Node2D" unique_id=2101397843]
 
@@ -32,30 +26,19 @@ one_way_collision_direction = Vector2(1, 0)
 unique_name_in_owner = true
 
 [node name="OffsetNode" type="Area2D" parent="CameraNodes/OffsetNodes" unique_id=15206368 instance=ExtResource("3_p0207")]
-position = Vector2(78.55548, -56.82846)
+position = Vector2(1214.3839, -332.2932)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("4_f7tol")
 
-[node name="OffsetNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/OffsetNodes/OffsetNode" unique_id=1937402394]
-position = Vector2(-322.55548, -118.17154)
-shape = SubResource("RectangleShape2D_p0207")
+[node name="OffsetNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/OffsetNodes/OffsetNode" unique_id=1706108092]
+position = Vector2(-841.3839, 313.2932)
+shape = SubResource("RectangleShape2D_xv86u")
 script = ExtResource("5_qyy34")
-OffsetX = -100.0
+OffsetX = 100.0
 
 [node name="CenterPointNodes" type="Node2D" parent="CameraNodes" unique_id=304861987]
 unique_name_in_owner = true
-
-[node name="BorderNode" type="StaticBody2D" parent="CameraNodes/CenterPointNodes" unique_id=635427066 instance=ExtResource("3_xv86u")]
-position = Vector2(78.55548, -56.82846)
-collision_layer = 8
-collision_mask = 8
-script = ExtResource("7_vgnd4")
-
-[node name="BorderNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/CenterPointNodes/BorderNode" unique_id=1250268959]
-position = Vector2(208.44452, -64.17154)
-shape = SubResource("RectangleShape2D_f7tol")
-script = ExtResource("5_0qvcf")
 
 [node name="BorderNodes" type="Node2D" parent="CameraNodes" unique_id=1515397751]
 unique_name_in_owner = true
