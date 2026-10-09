@@ -58,7 +58,7 @@ func _draw() -> void:
 		16                                      #font size
 	)
 
-func ApplyOffset(CameraCenter: Area2D):
+func ApplyOffset(CameraCenter: CameraCenterComponent):
 	var CameraTween = create_tween()
 	CameraTween.set_ease(Tween.EASE_IN_OUT)
 	CameraTween.set_trans(Tween.TRANS_SINE)

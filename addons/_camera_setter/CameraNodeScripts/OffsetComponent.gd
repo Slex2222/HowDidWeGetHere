@@ -18,7 +18,14 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 
-	area_entered.connect(CameraCenteredEntered)
+	body_entered.connect(CameraCenteredEntered)
+	body_exited.connect(CameraCenterExited)
 
-func CameraCenteredEntered(Area: Area2D) -> void:
-	CameraCenterEnteredOffsetNode.emit(Area)
+func CameraCenteredEntered(Body: CameraCenterComponent) -> void:
+	CameraCenterEnteredOffsetNode.emit(Body)
+	
+	Body.InOffsetNode = true
+
+
+func CameraCenterExited(Body: CameraCenterComponent) -> void:
+	Body.InOffsetNode = false

@@ -1,5 +1,5 @@
 @tool
-class_name BorderNode extends Area2D
+class_name BorderNode extends StaticBody2D
 
 var BorderNodeShape: BorderNodeCollisionShape
 
@@ -17,8 +17,3 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
-
-	area_entered.connect(CameraCenteredEntered)
-
-func CameraCenteredEntered(Area: Area2D) -> void:
-	CameraCenterEnteredBorderNode.emit(Area)
