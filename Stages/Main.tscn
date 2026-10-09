@@ -3,11 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cm8jcx2v646j6" path="res://TileMaps/TestMap/TileMapNodes/TestMap.tscn" id="1_g247f"]
 [ext_resource type="PackedScene" uid="uid://edwa7kc8u7m0" path="res://Instances/Player/Scenes/Player.tscn" id="2_5neot"]
 [ext_resource type="PackedScene" uid="uid://b1m3eljxap47h" path="res://addons/_camera_setter/CameraNodes/OffsetNode.tscn" id="3_p0207"]
-[ext_resource type="Script" uid="uid://cr528557o21vj" path="res://addons/_camera_setter/CameraNodeScripts/OffsetComponent.gd" id="4_f7tol"]
 [ext_resource type="Script" uid="uid://fi6w72hbkcv2" path="res://addons/_camera_setter/CameraNodeScripts/OffsetNodeCollisionShape.gd" id="5_qyy34"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv86u"]
-size = Vector2(552, 271.2932)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvtte"]
+size = Vector2(64, 64)
 
 [node name="Main" type="Node2D" unique_id=2101397843]
 
@@ -25,15 +24,12 @@ one_way_collision_direction = Vector2(1, 0)
 [node name="OffsetNodes" type="Node2D" parent="CameraNodes" unique_id=1341108140]
 unique_name_in_owner = true
 
-[node name="OffsetNode" type="Area2D" parent="CameraNodes/OffsetNodes" unique_id=15206368 instance=ExtResource("3_p0207")]
+[node name="OffsetNode" parent="CameraNodes/OffsetNodes" unique_id=15206368 instance=ExtResource("3_p0207")]
 position = Vector2(1214.3839, -332.2932)
-collision_layer = 8
-collision_mask = 8
-script = ExtResource("4_f7tol")
 
 [node name="OffsetNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/OffsetNodes/OffsetNode" unique_id=1706108092]
 position = Vector2(-841.3839, 313.2932)
-shape = SubResource("RectangleShape2D_xv86u")
+shape = SubResource("RectangleShape2D_kvtte")
 script = ExtResource("5_qyy34")
 OffsetX = 100.0
 
