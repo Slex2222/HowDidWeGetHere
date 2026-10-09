@@ -38,10 +38,16 @@ func SelectShape() -> void:
 	EditorInterface.edit_node(self)
 
 func _ready() -> void:
-	get_parent().body_entered.connect(ApplyOffset)
+	get_parent().CameraCenterEnteredOffsetNode.connect(ApplyOffset)
 
-func ApplyOffset() -> void:
-	pass
+func ApplyOffset(CameraCenter: CameraCenterComponent):
+	var CameraTween = create_tween()
+	CameraTween.set_ease(Tween.EASE_IN_OUT)
+	CameraTween.set_trans(Tween.TRANS_SINE)
+	
+	var Duration = CameraCenter.position.distance_to(Offset) / OffsetTransitionSpeed
+	
+	CameraTween.tween_property(CameraCenter, "position", Offset, Duration)
 
 func _draw() -> void:
 	if not Engine.is_editor_hint():

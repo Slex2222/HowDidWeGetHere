@@ -2,11 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cm8jcx2v646j6" path="res://TileMaps/TestMap/TileMapNodes/TestMap.tscn" id="1_g247f"]
 [ext_resource type="PackedScene" uid="uid://edwa7kc8u7m0" path="res://Instances/Player/Scenes/Player.tscn" id="2_5neot"]
-[ext_resource type="PackedScene" uid="uid://b1m3eljxap47h" path="res://addons/_camera_setter/CameraNodes/OffsetNode.tscn" id="3_p0207"]
-[ext_resource type="Script" uid="uid://fi6w72hbkcv2" path="res://addons/_camera_setter/CameraNodeScripts/OffsetNodeCollisionShape.gd" id="5_qyy34"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvtte"]
-size = Vector2(64, 64)
 
 [node name="Main" type="Node2D" unique_id=2101397843]
 
@@ -14,24 +9,11 @@ size = Vector2(64, 64)
 tile_map_data = PackedByteArray("AAAAAAAAAQACAAIAAAAAAP//AQACAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAIAAAD9//3/AQAEAAAAAAD9//7/AQADAAEAAAD9////AQADAAEAAAD9/wAAAQADAAEAAAD9/wEAAQADAAEAAAD9/wIAAQAEAAMAAAD+/wIAAQABAAMAAAD//wIAAQABAAMAAAAAAAIAAQABAAMAAAABAAIAAQABAAMAAAACAAEAAQADAAEAAAACAAAAAQADAAEAAAACAP//AQADAAEAAAACAP7/AQADAAEAAAABAP3/AQABAAMAAAAAAP3/AQABAAMAAAD///3/AQABAAMAAAD+//3/AQABAAMAAAACAP3/AQAHAAAAAAACAAIAAQAHAAMAAAD7/wMAAQADAAEAAAD7/wQAAQAEAAMAAAD8/wQAAQABAAMAAAD9/wQAAQABAAMAAAD+/wQAAQABAAMAAAD//wQAAQABAAMAAAAAAAQAAQABAAMAAAABAAQAAQABAAMAAAACAAQAAQABAAMAAAADAAQAAQABAAMAAAAEAAMAAQADAAEAAAAEAAQAAQAHAAMAAAAEAAIAAQADAAEAAAAEAAEAAQADAAEAAAAEAAAAAQADAAEAAAAEAP//AQADAAEAAAAEAP7/AQADAAEAAAAEAP3/AQADAAEAAAAEAPz/AQADAAEAAAAEAPv/AQAHAAAAAAADAPv/AQABAAMAAAACAPv/AQABAAMAAAABAPv/AQABAAMAAAAAAPv/AQABAAMAAAD///v/AQABAAMAAAD+//v/AQABAAMAAAD9//v/AQABAAMAAAD8//v/AQABAAMAAAD7//v/AQAEAAAAAAD7//z/AQADAAEAAAD7//3/AQADAAEAAAD7//7/AQADAAEAAAD7////AQADAAEAAAD7/wAAAQADAAEAAAD7/wEAAQADAAEAAAD7/wIAAQADAAEAAAA=")
 
 [node name="Player" parent="." unique_id=897621269 instance=ExtResource("2_5neot")]
-position = Vector2(-1, 0)
-
-[node name="CollisionShape2D" parent="Player/CameraCenter" parent_id_path=PackedInt32Array(897621269, 255813732) index="0" unique_id=1234393217]
-one_way_collision_direction = Vector2(1, 0)
 
 [node name="CameraNodes" type="Node2D" parent="." unique_id=860840756]
 
 [node name="OffsetNodes" type="Node2D" parent="CameraNodes" unique_id=1341108140]
 unique_name_in_owner = true
-
-[node name="OffsetNode" parent="CameraNodes/OffsetNodes" unique_id=15206368 instance=ExtResource("3_p0207")]
-position = Vector2(1214.3839, -332.2932)
-
-[node name="OffsetNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/OffsetNodes/OffsetNode" unique_id=1706108092]
-position = Vector2(-841.3839, 313.2932)
-shape = SubResource("RectangleShape2D_kvtte")
-script = ExtResource("5_qyy34")
-OffsetX = 100.0
 
 [node name="CenterPointNodes" type="Node2D" parent="CameraNodes" unique_id=304861987]
 unique_name_in_owner = true

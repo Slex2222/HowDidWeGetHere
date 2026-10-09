@@ -3,7 +3,7 @@ class_name OffsetNode extends Area2D
 
 var OffsetNodeShape: OffsetNodeCollisionShape
 
-signal CameraCenterEnteredOffsetNode
+signal CameraCenterEnteredOffsetNode(Body: CameraCenterComponent)
 
 func _enter_tree() -> void:
 	if get_child_count() == 0:

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c8xiq8y4najmq" path="res://Globals/Components/GlobalComponents/MovementComponent.gd" id="2_wggx7"]
 [ext_resource type="Script" uid="uid://cwtwq1085udqk" path="res://Globals/Components/GlobalComponents/InputComponent.gd" id="3_k3x16"]
 [ext_resource type="Script" uid="uid://dad3kjhcclgnw" path="res://Globals/Components/GlobalComponents/QuitComponent.gd" id="6_3dyp4"]
-[ext_resource type="PackedScene" uid="uid://caihwt3tjlfxr" path="res://Instances/Player/Scenes/CameraCenter.tscn" id="6_dvjiq"]
+[ext_resource type="PackedScene" uid="uid://caihwt3tjlfxr" path="res://addons/_camera_setter/CameraNodes/CameraCenter.tscn" id="6_dvjiq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk53w"]
 atlas = ExtResource("1_vk53w")
@@ -49,7 +49,4 @@ position = Vector2(-2, -18)
 sprite_frames = SubResource("SpriteFrames_wgw2u")
 animation = &"Idle"
 
-[node name="CameraCenter" parent="." unique_id=255813732 instance=ExtResource("6_dvjiq")]
-unique_name_in_owner = true
-
-[editable path="CameraCenter"]
+[node name="CameraCenter" parent="." unique_id=1490253640 instance=ExtResource("6_dvjiq")]
