@@ -7,7 +7,7 @@ radius = 1.0
 
 [node name="CameraCenter" type="CharacterBody2D" unique_id=164763941]
 collision_layer = 8
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_xxy1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1234393217]

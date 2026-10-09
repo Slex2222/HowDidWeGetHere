@@ -1,5 +1,5 @@
 [gd_scene format=3 uid="uid://bk1xjrysln3en"]
 
 [node name="CenterPointNode" type="Area2D" unique_id=1513588450]
-collision_layer = 0
+collision_layer = 8
 collision_mask = 8

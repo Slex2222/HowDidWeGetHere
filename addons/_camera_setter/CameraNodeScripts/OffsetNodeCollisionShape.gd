@@ -66,3 +66,4 @@ func ApplyOffset(CameraCenter: CameraCenterComponent):
 	var Duration = CameraCenter.position.distance_to(Offset) / OffsetTransitionSpeed
 	
 	CameraTween.tween_property(CameraCenter, "position", Offset, Duration)
+
