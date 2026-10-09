@@ -3,8 +3,6 @@ class_name BorderNode extends Area2D
 
 var BorderNodeShape: BorderNodeCollisionShape
 
-signal CameraCenterEnteredBorderNode(CameraCenter: Area2D)
-
 func _enter_tree() -> void:
 	if get_child_count() == 0:
 		BorderNodeShape = BorderNodeCollisionShape.new()
@@ -17,8 +15,3 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
-
-	area_entered.connect(CameraCenteredEntered)
-
-func CameraCenteredEntered(Area: Area2D) -> void:
-	CameraCenterEnteredBorderNode.emit(Area)
