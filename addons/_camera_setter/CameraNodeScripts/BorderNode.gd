@@ -1,5 +1,5 @@
 @tool
-class_name BorderNode extends Area2D
+class_name BorderNode extends StaticBody2D
 
 var BorderNodeShape: BorderNodeCollisionShape
 

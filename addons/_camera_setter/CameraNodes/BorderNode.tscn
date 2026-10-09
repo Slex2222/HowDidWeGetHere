@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://72w34dtlqs72" path="res://addons/_camera_setter/CameraNodeScripts/BorderNode.gd" id="1_8445h"]
 
-[node name="BorderNode" type="Area2D" unique_id=1000230564]
+[node name="BorderNode" type="StaticBody2D" unique_id=635427066]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_8445h")
