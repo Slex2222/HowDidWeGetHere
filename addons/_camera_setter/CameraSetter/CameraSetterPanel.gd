@@ -22,10 +22,10 @@ func OffsetButtonPressed() -> void:
 	CreateCustemCameraNode(OffsetNode, "OffsetNodes")
 
 func BorderButtonPressed() -> void:
-	CreateCustemCameraNode(BorderNode, "CenterPointNodes")
+	CreateCustemCameraNode(BorderNode, "BorderNodes")
 
 func CenterPointButtonPressed() -> void:
-	CreateCustemCameraNode(CenterPointNode, "BorderNodes")
+	CreateCustemCameraNode(CenterPointNode, "CenterPointNodes")
 #endregion
 
 func FindScreenCenter():
