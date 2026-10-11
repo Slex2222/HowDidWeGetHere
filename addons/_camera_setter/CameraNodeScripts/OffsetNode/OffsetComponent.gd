@@ -24,8 +24,8 @@ func _ready() -> void:
 func CameraCenteredEntered(Body: CameraCenterComponent) -> void:
 	CameraCenterEnteredOffsetNode.emit(Body)
 	
-	Body.InOffsetNode = true
+	Body.InCameraNode = true
 
 
 func CameraCenterExited(Body: CameraCenterComponent) -> void:
-	Body.InOffsetNode = false
+	Body.InCameraNode = false

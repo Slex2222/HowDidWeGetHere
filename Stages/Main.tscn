@@ -2,12 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://cm8jcx2v646j6" path="res://TileMaps/TestMap/TileMapNodes/TestMap.tscn" id="1_g247f"]
 [ext_resource type="PackedScene" uid="uid://edwa7kc8u7m0" path="res://Instances/Player/Scenes/Player.tscn" id="2_5neot"]
-[ext_resource type="PackedScene" uid="uid://djk5cvn41eung" path="res://addons/_camera_setter/CameraNodes/BorderNode.tscn" id="5_0qvcf"]
-[ext_resource type="Script" uid="uid://xrr53uv6tjjn" path="res://addons/_camera_setter/CameraNodeScripts/BorderNode.gd" id="6_p0207"]
-[ext_resource type="Script" uid="uid://ybcbjy3ut8r0" path="res://addons/_camera_setter/CameraNodeScripts/BorderNodeCollisionShape.gd" id="7_f7tol"]
+[ext_resource type="PackedScene" uid="uid://bk1xjrysln3en" path="res://addons/_camera_setter/CameraNodes/CenterPointNode.tscn" id="3_5neot"]
+[ext_resource type="Script" uid="uid://5g72bc5ukkva" path="res://addons/_camera_setter/CameraNodeScripts/CenterPointNode/CenterPointNode.gd" id="4_xv86u"]
+[ext_resource type="Script" uid="uid://crre1rcefg2kq" path="res://addons/_camera_setter/CameraNodeScripts/CenterPointNode/CenterPointCollisionShape.gd" id="5_w3q7g"]
+[ext_resource type="Script" uid="uid://dvrjjr45psic2" path="res://addons/_camera_setter/CameraNodeScripts/CenterPointNode/PlacementNode.gd" id="6_w3q7g"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv86u"]
-size = Vector2(248, 333)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3q7g"]
+size = Vector2(355.909, 264.54547)
 
 [node name="Main" type="Node2D" unique_id=2101397843]
 
@@ -15,6 +16,9 @@ size = Vector2(248, 333)
 tile_map_data = PackedByteArray("AAAAAAAAAQACAAIAAAAAAP//AQACAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAIAAAD9//3/AQAEAAAAAAD9//7/AQADAAEAAAD9////AQADAAEAAAD9/wAAAQADAAEAAAD9/wEAAQADAAEAAAD9/wIAAQAEAAMAAAD+/wIAAQABAAMAAAD//wIAAQABAAMAAAAAAAIAAQABAAMAAAABAAIAAQABAAMAAAACAAEAAQADAAEAAAACAAAAAQADAAEAAAACAP//AQADAAEAAAACAP7/AQADAAEAAAABAP3/AQABAAMAAAAAAP3/AQABAAMAAAD///3/AQABAAMAAAD+//3/AQABAAMAAAACAP3/AQAHAAAAAAACAAIAAQAHAAMAAAD7/wMAAQADAAEAAAD7/wQAAQAEAAMAAAD8/wQAAQABAAMAAAD9/wQAAQABAAMAAAD+/wQAAQABAAMAAAD//wQAAQABAAMAAAAAAAQAAQABAAMAAAABAAQAAQABAAMAAAACAAQAAQABAAMAAAADAAQAAQABAAMAAAAEAAMAAQADAAEAAAAEAAQAAQAHAAMAAAAEAAIAAQADAAEAAAAEAAEAAQADAAEAAAAEAAAAAQADAAEAAAAEAP//AQADAAEAAAAEAP7/AQADAAEAAAAEAP3/AQADAAEAAAAEAPz/AQADAAEAAAAEAPv/AQAHAAAAAAADAPv/AQABAAMAAAACAPv/AQABAAMAAAABAPv/AQABAAMAAAAAAPv/AQABAAMAAAD///v/AQABAAMAAAD+//v/AQABAAMAAAD9//v/AQABAAMAAAD8//v/AQABAAMAAAD7//v/AQAEAAAAAAD7//z/AQADAAEAAAD7//3/AQADAAEAAAD7//7/AQADAAEAAAD7////AQADAAEAAAD7/wAAAQADAAEAAAD7/wEAAQADAAEAAAD7/wIAAQADAAEAAAD4//v/AQACAAAAAAD4//z/AQACAAEAAAD4//3/AQACAAEAAAD4//7/AQACAAEAAAD4////AQACAAEAAAD4/wAAAQACAAEAAAD4/wEAAQACAAEAAAD3/wIAAQABAAEAAAD3/wMAAQABAAEAAAD3/wQAAQABAAIAAAD4/wQAAQACAAIAAAD4/wMAAQACAAEAAAD4/wIAAQACAAEAAAD3/wEAAQABAAEAAAD3/wAAAQABAAEAAAD3////AQABAAEAAAD3//7/AQABAAEAAAD3//3/AQABAAEAAAD3//z/AQABAAEAAAD3//v/AQABAAAAAAD2//v/AQABAAAAAAD2//z/AQABAAEAAAD2//3/AQABAAEAAAD2//7/AQABAAEAAAD2////AQABAAEAAAD2/wAAAQABAAEAAAD2/wEAAQABAAEAAAD2/wIAAQABAAEAAAD2/wMAAQABAAEAAAD2/wQAAQABAAIAAAD1/wQAAQABAAIAAAD1/wMAAQABAAEAAAD1/wIAAQABAAEAAAD1/wEAAQABAAEAAAD1/wAAAQABAAEAAAD1////AQABAAEAAAD1//7/AQABAAEAAAD1//3/AQABAAEAAAD0//3/AQAAAAEAAAD0//z/AQAAAAEAAAD0//v/AQAAAAAAAAD1//v/AQABAAAAAAD1//z/AQABAAEAAAD0//7/AQAAAAEAAAD0////AQAAAAEAAAD0/wAAAQAAAAEAAAD0/wEAAQAAAAEAAAD0/wIAAQAAAAEAAAD0/wMAAQAAAAEAAAD0/wQAAQAAAAIAAAA=")
 
 [node name="Player" parent="." unique_id=897621269 instance=ExtResource("2_5neot")]
+
+[node name="PhysicsShape" parent="Player" index="2" unique_id=374787075]
+position = Vector2(0, -16)
 
 [node name="CameraCenter" parent="Player" index="3" unique_id=1490253640 node_paths=PackedStringArray("VelocityComponent")]
 VelocityComponent = NodePath("../Components/VelocityComponent")
@@ -27,19 +31,22 @@ unique_name_in_owner = true
 [node name="CenterPointNodes" type="Node2D" parent="CameraNodes" unique_id=304861987]
 unique_name_in_owner = true
 
+[node name="CenterPointNode" type="Area2D" parent="CameraNodes/CenterPointNodes" unique_id=1513588450 instance=ExtResource("3_5neot")]
+position = Vector2(-479.091, -87.54547)
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("4_xv86u")
+
+[node name="CenterPointCollisionShape" type="CollisionShape2D" parent="CameraNodes/CenterPointNodes/CenterPointNode" unique_id=1418295133]
+position = Vector2(-145.95453, 100.272736)
+shape = SubResource("RectangleShape2D_w3q7g")
+script = ExtResource("5_w3q7g")
+
+[node name="PlacementNode" type="Node2D" parent="CameraNodes/CenterPointNodes/CenterPointNode" unique_id=1285423664]
+script = ExtResource("6_w3q7g")
+
 [node name="BorderNodes" type="Node2D" parent="CameraNodes" unique_id=1515397751]
 unique_name_in_owner = true
-
-[node name="BorderNode" type="StaticBody2D" parent="CameraNodes/BorderNodes" unique_id=635427066 instance=ExtResource("5_0qvcf")]
-position = Vector2(-350.90112, 2.5674133)
-collision_layer = 8
-collision_mask = 8
-script = ExtResource("6_p0207")
-
-[node name="BorderNodeCollisionShape" type="CollisionShape2D" parent="CameraNodes/BorderNodes/BorderNode" unique_id=1779297074]
-position = Vector2(-193.09888, 78.93259)
-shape = SubResource("RectangleShape2D_xv86u")
-script = ExtResource("7_f7tol")
 
 [editable path="Player"]
 [editable path="Player/CameraCenter"]

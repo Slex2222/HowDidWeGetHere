@@ -1,5 +1,5 @@
 @tool
-class_name BorderNodeCollisionShape extends CollisionShape2D
+class_name BorderNodeCollisionShape extends CameraCollisionShape
 
 @export_range(0.0, 100.0, 1.0)
 var BorderRevertSpeed: float = 10.0
@@ -15,8 +15,3 @@ func _ready() -> void:
 	shape = rectangle
 	
 	call_deferred("SelectShape") 
-
-func SelectShape() -> void:
-	if !Engine.is_editor_hint(): return
-	
-	EditorInterface.edit_node(self)

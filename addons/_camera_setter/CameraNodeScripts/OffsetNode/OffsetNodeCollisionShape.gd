@@ -1,5 +1,5 @@
 @tool
-class_name OffsetNodeCollisionShape extends CollisionShape2D
+class_name OffsetNodeCollisionShape extends CameraCollisionShape
 
 #region Exports
 @export_category("OffsetSpeed")
@@ -34,20 +34,11 @@ func _enter_tree() -> void:
 	if Engine.is_editor_hint():
 		call_deferred("SelectShape")
 
-func SelectShape() -> void:
-	EditorInterface.edit_node(self)
-
+# connects to apply offset the first parameter camera center gets send by the signal
 func _ready() -> void:
-	get_parent().CameraCenterEnteredOffsetNode.connect(ApplyOffset)
-
-func ApplyOffset(CameraCenter: CameraCenterComponent):
-	var CameraTween = create_tween()
-	CameraTween.set_ease(Tween.EASE_IN_OUT)
-	CameraTween.set_trans(Tween.TRANS_SINE)
-	
-	var Duration = CameraCenter.position.distance_to(Offset) / OffsetTransitionSpeed
-	
-	CameraTween.tween_property(CameraCenter, "position", Offset, Duration)
+	get_parent().CameraCenterEnteredOffsetNode.connect( 
+		ApplyOffset.bind(Offset, OffsetTransitionSpeed)
+		)
 
 func _draw() -> void:
 	if not Engine.is_editor_hint():
