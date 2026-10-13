@@ -1,3 +1,4 @@
+@icon("res://addons/CameraSetter/Icons/CustomCameraCenter.svg")
 class_name CameraCenterComponent extends CharacterBody2D
 
 @export var VelocityComponent: VelocityComponent

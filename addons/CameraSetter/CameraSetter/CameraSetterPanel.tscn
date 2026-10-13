@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ed1k1efupciw"]
 
-[ext_resource type="Script" uid="uid://5sjw41adukto" path="res://addons/_camera_setter/CameraSetter/CameraSetterPanel.gd" id="1_5o777"]
-[ext_resource type="StyleBox" uid="uid://cb708h1ujs4eg" path="res://addons/_camera_setter/CameraSetter/PanelBackground.tres" id="1_wk43c"]
+[ext_resource type="Script" uid="uid://5sjw41adukto" path="res://addons/CameraSetter/CameraSetter/CameraSetterPanel.gd" id="1_5o777"]
+[ext_resource type="StyleBox" uid="uid://cb708h1ujs4eg" path="res://addons/CameraSetter/CameraSetter/PanelBackground.tres" id="1_wk43c"]
 
 [node name="CameraSetter" type="Control" unique_id=1280513977]
 custom_minimum_size = Vector2(0, 200)

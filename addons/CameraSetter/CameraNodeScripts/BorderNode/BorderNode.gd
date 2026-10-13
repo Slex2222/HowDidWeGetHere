@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/CameraSetter/Icons/CustomCameraNode.svg")
 class_name BorderNode extends StaticBody2D
 
 var BorderNodeShape: BorderNodeCollisionShape

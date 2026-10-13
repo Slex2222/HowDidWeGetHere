@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/CameraSetter/Icons/CustomCameraNode.svg")
 class_name OffsetNode extends Area2D
 
 var OffsetNodeShape: OffsetNodeCollisionShape

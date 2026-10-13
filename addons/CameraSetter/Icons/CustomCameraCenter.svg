@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Camera Body -->
+  <path d="M2 5a2 2 0 0 1 2-2h2.5l1-1h3l1 1H12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5z" fill="#2073c2" stroke="#104373" stroke-width="1"/>
+  <!-- Top Viewfinder Accent -->
+  <rect x="7" y="2.5" width="2" height="1.5" fill="#104373" rx="0.5"/>
+  <!-- Lens Outer Rim -->
+  <circle cx="8" cy="9" r="3.5" fill="#104373"/>
+  <!-- Lens Body -->
+  <circle cx="8" cy="9" r="2.2" fill="#36abff"/>
+  <!-- Center Target / Crosshair -->
+  <line x1="8" y1="7.2" x2="8" y2="10.8" stroke="#104373" stroke-width="0.8"/>
+  <line x1="6.2" y1="9" x2="9.8" y2="9" stroke="#104373" stroke-width="0.8"/>
+  <circle cx="8" cy="9" r="0.6" fill="#104373"/>
+</svg>

@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/CameraSetter/Icons/CustomCameraNode.svg")
 class_name CenterPointNode extends Area2D
 
 signal PlayerEnteredCenterPointNode(Body: Player)

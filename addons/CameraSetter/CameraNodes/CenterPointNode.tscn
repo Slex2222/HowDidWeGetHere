@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bk1xjrysln3en"]
+
+[ext_resource type="Script" uid="uid://5g72bc5ukkva" path="res://addons/CameraSetter/CameraNodeScripts/CenterPointNode/CenterPointNode.gd" id="1_cvkcp"]
+
+[node name="CenterPointNode" type="Area2D" unique_id=1513588450]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_cvkcp")

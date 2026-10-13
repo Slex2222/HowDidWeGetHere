@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1m3eljxap47h"]
 
-[ext_resource type="Script" uid="uid://cr528557o21vj" path="res://addons/_camera_setter/CameraNodeScripts/OffsetNode/OffsetComponent.gd" id="1_04naa"]
+[ext_resource type="Script" uid="uid://cr528557o21vj" path="res://addons/CameraSetter/CameraNodeScripts/OffsetNode/OffsetComponent.gd" id="1_04naa"]
 
 [node name="OffsetNode" type="Area2D" unique_id=15206368]
 collision_layer = 8

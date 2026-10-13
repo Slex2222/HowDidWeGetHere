@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://di772lx0g4kco" path="res://Instances/Player/Scripts/Master Script/PlayerMaster.gd" id="1_o1530"]
 [ext_resource type="Texture2D" uid="uid://dar784fdruj84" path="res://Instances/Player/Assets/TestPlayer.png" id="1_vk53w"]
-[ext_resource type="Script" uid="uid://c8xiq8y4najmq" path="res://Globals/Components/GlobalComponents/MovementComponent.gd" id="2_wggx7"]
-[ext_resource type="Script" uid="uid://cwtwq1085udqk" path="res://Globals/Components/GlobalComponents/InputComponent.gd" id="3_k3x16"]
-[ext_resource type="Script" uid="uid://dad3kjhcclgnw" path="res://Globals/Components/GlobalComponents/QuitComponent.gd" id="6_3dyp4"]
-[ext_resource type="PackedScene" uid="uid://caihwt3tjlfxr" path="res://addons/_camera_setter/CameraNodes/CameraCenter.tscn" id="6_dvjiq"]
+[ext_resource type="Script" uid="uid://c8xiq8y4najmq" path="res://addons/Components/Scripts/MovementComponent.gd" id="2_wggx7"]
+[ext_resource type="Script" uid="uid://cwtwq1085udqk" path="res://addons/Components/Scripts/InputComponent.gd" id="3_k3x16"]
+[ext_resource type="Script" uid="uid://dad3kjhcclgnw" path="res://addons/Components/Scripts/QuitComponent.gd" id="6_3dyp4"]
+[ext_resource type="PackedScene" uid="uid://caihwt3tjlfxr" path="res://addons/CameraSetter/CameraNodes/CameraCenter.tscn" id="6_dvjiq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk53w"]
 atlas = ExtResource("1_vk53w")
@@ -33,18 +33,19 @@ script = ExtResource("1_o1530")
 
 [node name="Components" type="Node2D" parent="." unique_id=1464319595]
 
-[node name="VelocityComponent" type="Node2D" parent="Components" unique_id=1055930296 node_paths=PackedStringArray("SelectedMoveableObject", "InputComponent")]
-script = ExtResource("2_wggx7")
-Speed = 150.0
-SelectedMoveableObject = NodePath("../..")
-InputComponent = NodePath("../InputComponent")
-
 [node name="InputComponent" type="Node2D" parent="Components" unique_id=2111707842]
 script = ExtResource("3_k3x16")
 
-[node name="QuitComponent" type="Node2D" parent="Components" unique_id=1657389563 node_paths=PackedStringArray("InputComponent")]
+[node name="VelocityComponent" type="Node2D" parent="Components" unique_id=418331801 node_paths=PackedStringArray("SelectedMoveableObject", "InputComponent")]
+script = ExtResource("2_wggx7")
+SelectedMoveableObject = NodePath("../..")
+InputComponent = NodePath("../InputComponent")
+metadata/_custom_type_script = "uid://c8xiq8y4najmq"
+
+[node name="ChangeStateComponent" type="Node2D" parent="Components" unique_id=943968074 node_paths=PackedStringArray("InputComponent")]
 script = ExtResource("6_3dyp4")
 InputComponent = NodePath("../InputComponent")
+metadata/_custom_type_script = "uid://dad3kjhcclgnw"
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=193712931]
 position = Vector2(-2, -18)

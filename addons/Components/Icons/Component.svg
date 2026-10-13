@@ -1,0 +1,10 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Component Border -->
+  <rect x="2" y="2" width="12" height="12" rx="2" fill="#4772b3" stroke="#7097d1" stroke-width="1"/>
+  <!-- Inner Detail / Pins -->
+  <rect x="5" y="5" width="6" height="6" fill="#20304a"/>
+  <line x1="2" y1="6" x2="0" y2="6" stroke="#7097d1" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="2" y1="10" x2="0" y2="10" stroke="#7097d1" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="6" x2="16" y2="6" stroke="#7097d1" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="10" x2="16" y2="10" stroke="#7097d1" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

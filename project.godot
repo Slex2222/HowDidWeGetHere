@@ -37,7 +37,7 @@ naming/script_name_casing=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/InstanceCreator/plugin.cfg", "res://addons/_camera_setter/plugin.cfg")
+enabled=PackedStringArray("res://addons/CameraSetter/plugin.cfg", "res://addons/Components/plugin.cfg", "res://addons/InstanceCreator/plugin.cfg")
 
 [input]
 

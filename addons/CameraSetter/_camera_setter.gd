@@ -4,7 +4,7 @@ extends EditorPlugin
 var EditorPanel: Control
 
 func _enter_tree() -> void:
-	EditorPanel = preload("res://addons/_camera_setter/CameraSetter/CameraSetterPanel.tscn").instantiate()
+	EditorPanel = preload("res://addons/CameraSetter/CameraSetter/CameraSetterPanel.tscn").instantiate()
 	
 	add_control_to_bottom_panel(EditorPanel, "Camerasetter Panel")
 	

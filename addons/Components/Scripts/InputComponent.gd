@@ -1,5 +1,5 @@
 class_name InputComponent
-extends Node2D
+extends BaseComponent
 
 signal FastQuitPressed
 
