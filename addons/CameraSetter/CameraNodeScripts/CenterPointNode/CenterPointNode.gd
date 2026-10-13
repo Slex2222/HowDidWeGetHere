@@ -50,12 +50,12 @@ func PlayerExited(Body: Node2D) -> void:
 	var CameraCenter = Body.get_node("CameraCenter")
 	
 	CameraCenter.InCameraNode = false
-	AcceptParentPos(CameraCenter, Placementnode)
+	AcceptParentPos(CameraCenter, Placementnode, Body)
 
 func IgnoreParentPos(CameraCenter: CameraCenterComponent) -> void:
 	CameraCenter.top_level = true
 	CameraCenter.global_position = CameraCenter.get_parent().global_position
 
-func AcceptParentPos(CameraCenter: CameraCenterComponent, Placement: PlacementNode) -> void:
+func AcceptParentPos(CameraCenter: CameraCenterComponent, Placement: PlacementNode, PlayerBody: Player) -> void:
 	CameraCenter.top_level = false
 	CameraCenter.global_position = Placement.global_position

@@ -26,10 +26,11 @@ animations = [{
 radius = 17.0
 height = 60.0
 
-[node name="Player" type="CharacterBody2D" unique_id=897621269]
+[node name="Player" type="CharacterBody2D" unique_id=897621269 node_paths=PackedStringArray("CameraCenter")]
 collision_layer = 18
 collision_mask = 5
 script = ExtResource("1_o1530")
+CameraCenter = NodePath("CameraCenter")
 
 [node name="Components" type="Node2D" parent="." unique_id=1464319595]
 
@@ -57,3 +58,8 @@ position = Vector2(-1, -15)
 shape = SubResource("CapsuleShape2D_0qvcf")
 
 [node name="CameraCenter" parent="." unique_id=1490253640 instance=ExtResource("6_dvjiq")]
+
+[node name="Camera2D" parent="CameraCenter" index="1" unique_id=100903244]
+position_smoothing_enabled = true
+
+[editable path="CameraCenter"]
