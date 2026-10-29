@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dvrjjr45psic2" path="res://addons/CameraSetter/CameraNodeScripts/CenterPointNode/PlacementNode.gd" id="6_f7tol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv86u"]
-size = Vector2(64, 64)
+size = Vector2(295.1501, 305.87732)
 
 [node name="Main" type="Node2D" unique_id=2101397843]
 
@@ -31,14 +31,15 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="CenterPointNode" parent="CameraNodes/CenterPointNodes" unique_id=1513588450 instance=ExtResource("3_w3q7g")]
-position = Vector2(-428.69983, -114.75464)
+position = Vector2(-374, -224)
 
 [node name="CenterPointCollisionShape" type="CollisionShape2D" parent="CameraNodes/CenterPointNodes/CenterPointNode" unique_id=905134823]
-position = Vector2(-140.15009, 111.87732)
+position = Vector2(-255.7251, 232.81598)
 shape = SubResource("RectangleShape2D_xv86u")
 script = ExtResource("5_p0207")
 
 [node name="PlacementNode" type="Node2D" parent="CameraNodes/CenterPointNodes/CenterPointNode" unique_id=976310258]
+position = Vector2(-335.30017, 131.75464)
 script = ExtResource("6_f7tol")
 
 [node name="BorderNodes" type="Node2D" parent="CameraNodes" unique_id=1515397751]
