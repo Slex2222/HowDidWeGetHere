@@ -1,11 +1,18 @@
+@tool
 class_name NavigationComponent extends BaseComponent
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
+func _enter_tree() -> void:
+	if get_child_count() == 0:
+		AddLine2D()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func AddLine2D():
+	var Path = Path2D.new()
+	Path.name = "Path"
+	Path.curve = Curve2D.new()
+	
+	add_child(Path)
+	
+	if Engine.is_editor_hint():
+		Path.owner = get_tree().edited_scene_root

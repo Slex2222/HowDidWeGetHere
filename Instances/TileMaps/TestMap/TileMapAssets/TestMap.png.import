@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byw2tdordlwm3"
-path="res://.godot/imported/States.svg-fbf80bd0c3480f39d746e6c3621cd810.ctex"
+uid="uid://c2rds64576251"
+path="res://.godot/imported/TestMap.png-571621f7bc14c5d6061dd58f27ae6f29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/States.svg"
-dest_files=["res://.godot/imported/States.svg-fbf80bd0c3480f39d746e6c3621cd810.ctex"]
+source_file="res://Instances/TileMaps/TestMap/TileMapAssets/TestMap.png"
+dest_files=["res://.godot/imported/TestMap.png-571621f7bc14c5d6061dd58f27ae6f29.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

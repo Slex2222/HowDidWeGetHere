@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bgdlegbpgk48w"]
+
+[ext_resource type="Script" uid="uid://dq8obeidfnwic" path="res://addons/Components/Scripts/NavigationComponent.gd" id="1_ollj1"]
+
+[sub_resource type="Curve2D" id="Curve2D_xadyu"]
+_data = {
+"points": PackedVector2Array(-94.74701, -62.713047, 94.74701, 62.713047, -228, 83, -96.68017, -96.863716, 96.68017, 96.863716, -8, -35, -42.82635, -102.4995, 42.82635, 102.4995, 317, -57, -140.22461, -47.810936, 140.22461, 47.810936, 121, 179)
+}
+point_count = 4
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xadyu"]
+
+[node name="TestEnemy" type="CharacterBody2D" unique_id=1124908336]
+
+[node name="Components" type="Node2D" parent="." unique_id=92711428]
+
+[node name="NavigationComponent" type="Node2D" parent="Components" unique_id=1471912346]
+script = ExtResource("1_ollj1")
+metadata/_custom_type_script = "uid://dq8obeidfnwic"
+
+[node name="Path" type="Path2D" parent="Components/NavigationComponent" unique_id=719558727]
+curve = SubResource("Curve2D_xadyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1527796468]
+shape = SubResource("CapsuleShape2D_xadyu")

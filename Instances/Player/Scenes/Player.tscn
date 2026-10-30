@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://edwa7kc8u7m0"]
 
 [ext_resource type="Script" uid="uid://di772lx0g4kco" path="res://Instances/Player/Scripts/Master Script/PlayerMaster.gd" id="1_o1530"]
-[ext_resource type="Texture2D" uid="uid://dar784fdruj84" path="res://Instances/Player/Assets/TestPlayer.png" id="1_vk53w"]
 [ext_resource type="Script" uid="uid://c8xiq8y4najmq" path="res://addons/Components/Scripts/MovementComponent.gd" id="2_wggx7"]
 [ext_resource type="Script" uid="uid://cwtwq1085udqk" path="res://addons/Components/Scripts/InputComponent.gd" id="3_k3x16"]
+[ext_resource type="Texture2D" uid="uid://crntnnpn7lanx" path="res://Instances/Player/Assets/ColorPalleteBase.png" id="5_dvjiq"]
 [ext_resource type="Script" uid="uid://dad3kjhcclgnw" path="res://addons/Components/Scripts/QuitComponent.gd" id="6_3dyp4"]
 [ext_resource type="PackedScene" uid="uid://caihwt3tjlfxr" path="res://addons/CameraSetter/CameraNodes/CameraCenter.tscn" id="6_dvjiq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vk53w"]
-atlas = ExtResource("1_vk53w")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dyp4"]
+atlas = ExtResource("5_dvjiq")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wgw2u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vk53w")
+"texture": SubResource("AtlasTexture_3dyp4")
 }],
 "loop": 1,
 "name": &"Idle",
@@ -23,8 +23,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qvcf"]
-radius = 17.0
-height = 60.0
+radius = 16.0
+height = 70.0
 
 [node name="Player" type="CharacterBody2D" unique_id=897621269 node_paths=PackedStringArray("CameraCenter")]
 collision_layer = 18
@@ -49,12 +49,10 @@ InputComponent = NodePath("../InputComponent")
 metadata/_custom_type_script = "uid://dad3kjhcclgnw"
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=193712931]
-position = Vector2(-2, -18)
 sprite_frames = SubResource("SpriteFrames_wgw2u")
 animation = &"Idle"
 
 [node name="PhysicsShape" type="CollisionShape2D" parent="." unique_id=374787075]
-position = Vector2(-1, -15)
 shape = SubResource("CapsuleShape2D_0qvcf")
 
 [node name="CameraCenter" parent="." unique_id=1490253640 instance=ExtResource("6_dvjiq")]
