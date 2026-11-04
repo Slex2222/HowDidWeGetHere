@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dq8obeidfnwic" path="res://addons/Components/Scripts/NavigationComponent.gd" id="1_ollj1"]
 
-[sub_resource type="Curve2D" id="Curve2D_xadyu"]
+[sub_resource type="Curve2D" id="Curve2D_ollj1"]
 _data = {
-"points": PackedVector2Array(-94.74701, -62.713047, 94.74701, 62.713047, -228, 83, -96.68017, -96.863716, 96.68017, 96.863716, -8, -35, -42.82635, -102.4995, 42.82635, 102.4995, 317, -57, -140.22461, -47.810936, 140.22461, 47.810936, 121, 179)
+"points": PackedVector2Array(0, 0, 0, 0, -250, -23, 0, 0, 0, 0, 96, -23, 0, 0, 0, 0, -251, 103, 0, 0, 0, 0, -250, -23)
 }
 point_count = 4
 
@@ -14,12 +14,16 @@ point_count = 4
 
 [node name="Components" type="Node2D" parent="." unique_id=92711428]
 
-[node name="NavigationComponent" type="Node2D" parent="Components" unique_id=1471912346]
+[node name="NavigationComponent" type="Node2D" parent="Components" unique_id=1690678759]
 script = ExtResource("1_ollj1")
 metadata/_custom_type_script = "uid://dq8obeidfnwic"
 
-[node name="Path" type="Path2D" parent="Components/NavigationComponent" unique_id=719558727]
-curve = SubResource("Curve2D_xadyu")
+[node name="Path" type="Path2D" parent="Components/NavigationComponent" unique_id=1363965791]
+curve = SubResource("Curve2D_ollj1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Components/NavigationComponent/Path" unique_id=312055556]
+position = Vector2(-250, -23)
+rotates = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1527796468]
 shape = SubResource("CapsuleShape2D_xadyu")

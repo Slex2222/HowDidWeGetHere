@@ -16,3 +16,10 @@ func AddLine2D():
 	
 	if Engine.is_editor_hint():
 		Path.owner = get_tree().edited_scene_root
+		call_deferred("SelectShape", Path, Path.curve)
+
+func SelectShape(Path, PathCurve) -> void:
+	EditorInterface.edit_node(Path)
+	
+	EditorInterface.edit_resource(PathCurve)
+	
